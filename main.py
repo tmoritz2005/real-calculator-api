@@ -27,7 +27,7 @@ def add(a: float, b: float):
     return {"operation": "add", "a": a, "b": b, "result": a + b}
 
 
-@app.get("/subtract/{a}/{b}")
+@app.get("/sub/{a}/{b}")
 def sub(a: float, b: float):
     """
     Subtract b from a.
