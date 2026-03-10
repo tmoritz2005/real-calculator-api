@@ -48,7 +48,7 @@ def sub(a: float, b: float):
     return {"operation": "subtract", "a": a, "b": b, "result": a - b}
 
 
-@app.get("/multiply/{a}/{b}")
+@app.get("/mult/{a}/{b}")
 def mult(a: float, b: float):
     """
     Multiply two numbers together.
@@ -61,7 +61,7 @@ def mult(a: float, b: float):
     return {"operation": "multiply", "a": a, "b": b, "result": a * b}
 
 
-@app.get("/divide/{a}/{b}")
+@app.get("/div/{a}/{b}")
 def div(a: float, b: float):
     """
     Divide a by b.
