@@ -2,7 +2,12 @@ from fastapi import FastAPI, HTTPException
 import math
 
 app = FastAPI(title="Calculator API")
-
+@app.exception_handler(RequestValidationError)
+async def validation_exception_handler(request, exc):
+    return JSONResponse(
+        status_code=422,
+        content={"detail": "All arguments must be valid numbers."}
+    )
 
 def validate_numbers(*args):
     """Raise HTTP 422 if any argument fails float conversion."""
